@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+@import AVFoundation;
+
 @interface ViewController ()
 
 @end
@@ -24,4 +26,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)ButtonSpeech:(UIButton *)sender {
+    
+    AVSpeechSynthesizer *synthesizer = [[AVSpeechSynthesizer alloc]init];
+    
+    double speed = _SegmentedSpeed.selectedSegmentIndex;
+    NSString *input = _TextboxInput.text;
+    
+    AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:input];
+    [utterance setRate:speed];
+    [synthesizer speakUtterance:utterance];
+}
 @end

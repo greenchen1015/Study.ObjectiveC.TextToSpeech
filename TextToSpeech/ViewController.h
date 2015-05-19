@@ -10,6 +10,11 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *TextboxInput;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *SegmentedSpeed;
+
+- (IBAction)ButtonSpeech:(UIButton *)sender;
 
 @end
 
